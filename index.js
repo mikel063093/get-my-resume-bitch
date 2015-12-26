@@ -15,21 +15,20 @@ function onPreLoadNpm (err) {
     .then(succesPreload)
     .catch(function () {
       onLoadNpm(err)
-        .then(succesPreload)
+        .then(function () {
+          linkModule(hackmyresume)
+            .then(onPreLoadNpm)
+            .catch(onLog)
+        })
         .catch('run tis command as root')
     })
 }
 
 function succesPreload (err) {
   onLog('succesPreload')
-  linkModule(hackmyresume)
-    .then(function () {
-      onLog('ok linkModule')
-      bitchGetMyCV(err)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    })
-    .catch(onLog)
+  bitchGetMyCV(err)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
 }
 
 function chekModule (name) {
@@ -55,7 +54,7 @@ function linkModule (name) {
         return reject(err)
       }
       onLog('ok linkModule')
-      return resolve(stdout)
+      return resolve(null)
     })
   })
 }
