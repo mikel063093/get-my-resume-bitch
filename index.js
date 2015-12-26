@@ -99,7 +99,7 @@ function onLoadNpm (err) {
 
 // npmls(onLog)
 function onLog (arg) {
-  console.log(arg)
+  // console.log(arg)
 }
 // function npmls (cb) {
 //   exec('npm list -g --json ' + hackmyresume, function (err, stdout, stderr) {
