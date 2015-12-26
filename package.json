@@ -20,6 +20,11 @@
     "phantomjs",
     "cli"
   ],
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/mikel063093/get-my-resume-bitch.git"
+  },
+  "homepage": "https://github.com/mikel063093/get-my-resume-bitch",
   "author": "mikealegria <mikel063093@gmail.com> (http://mikealegria.co/)",
   "license": "MIT"
 }
